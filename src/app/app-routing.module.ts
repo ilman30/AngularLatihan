@@ -13,8 +13,10 @@ const routes: Routes = [
   {path:"about",component:AboutComponent},
   {path:"addprov",component:ProvinsiComponent},
   {path:"listprov",component:ProvinsiListComponent},
+  {path:"editprov/:id",component:ProvinsiComponent, pathMatch: 'full'},
   {path:"addkab",component:KabupatenComponent},
-  {path:"listkab",component:KabupatenListComponent}
+  {path:"listkab",component:KabupatenListComponent},
+  {path:"editkab/:id",component:KabupatenComponent, pathMatch: 'full'}
 
 ];
 

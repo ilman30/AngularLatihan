@@ -21,4 +21,9 @@ export class ProvinsiService{
         return this.httpKlien.get(environment.baseUrl + '/listprovinsijson')
             .pipe(map(data=> <Provinsi[]>data));
     }
+
+    getProvinsiById(id): Observable<Provinsi>{
+        return this.httpKlien.get(environment.baseUrl + '/listprovinsijson/'+id)
+            .pipe(map(data=> data as Provinsi));
+    }
 }

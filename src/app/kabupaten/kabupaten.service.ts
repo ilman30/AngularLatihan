@@ -22,4 +22,9 @@ export class KabupatenService{
             .pipe(map(data=> <Kabupaten[]>data));
     }
 
+    getKabupatenById(id): Observable<Kabupaten>{
+        return this.httpKlien.get(environment.baseUrl + '/listkabjson/'+id)
+            .pipe(map(data=> data as Kabupaten));
+    }
+
 }

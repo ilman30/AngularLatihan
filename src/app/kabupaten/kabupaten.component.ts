@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Provinsi } from '../provinsi/provinsi';
 import { ProvinsiService } from '../provinsi/provinsi.service';
 import { Kabupaten } from './kabupaten';
@@ -14,14 +14,12 @@ import { KabupatenService } from './kabupaten.service';
 
   export class KabupatenComponent implements OnInit {
 
+    id: String;
     addKabupatenForm: FormGroup;
     listProv: Provinsi[];
     
-    constructor(private kabupatenService: KabupatenService, private provinsiService: ProvinsiService, private router: Router) {
-
-     }
-  
-    ngOnInit(): void {
+    constructor(private kabupatenService: KabupatenService, private provinsiService: ProvinsiService, private route: ActivatedRoute, private router: Router) {
+      
       this.addKabupatenForm = new FormGroup({
         idKabupaten: new FormControl(null,[Validators.required]),
         namaKabupaten: new FormControl(null,[Validators.required, Validators.minLength(4)]),
@@ -34,6 +32,19 @@ import { KabupatenService } from './kabupaten.service';
       }, error => {
           console.log(error);
       })
+     }
+  
+    ngOnInit(): void {
+      this.route.params.subscribe(rute => {
+        this.id = rute.id;
+        this.kabupatenService.getKabupatenById(this.id).subscribe(data => {
+          this.addKabupatenForm.get('idKabupaten').setValue(data.idKabupaten);
+          this.addKabupatenForm.get('namaKabupaten').setValue(data.namaKabupaten);
+          this.addKabupatenForm.get('kodeProvinsi').setValue(data.kodeProvinsi);
+        }, error => {
+          alert('Data tidak ditemukan!');
+        });
+      });
     }
   
     simpanKab(): void{
