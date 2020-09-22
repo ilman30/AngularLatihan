@@ -1,0 +1,23 @@
+<div class="row">
+    <div class="col-md-12">
+        <section class="my-5">
+            <form [formGroup]="addProvinsiForm" (ngSubmit)="simpanProv()">
+                <div class="form-group">
+                  <label for="kode">ID Provinsi:</label>
+                  <input type="text" class="form-control" id="id" formControlName="idProvinsi" placeholder="ID">
+                  <span *ngIf="!addProvinsiForm.get('idProvinsi').valid && addProvinsiForm.get('idProvinsi').touched" class="help-block">
+                    ID Wajib Diisi!
+                  </span>
+                </div>
+                <div class="form-group">
+                  <label for="nama">Nama Provinsi:</label>
+                  <input type="text" class="form-control" id="nama" formControlName="namaProvinsi" placeholder="Nama Provinsi">
+                  <span *ngIf="!addProvinsiForm.get('namaProvinsi').valid && addProvinsiForm.get('namaProvinsi').touched" class="help-block">
+                    Nama Wajib Diisi!
+                  </span>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </section>
+    </div>
+</div>

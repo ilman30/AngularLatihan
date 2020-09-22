@@ -24,6 +24,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -119,6 +120,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "latihanAngular"
+    }
+  },
+  "defaultProject": "latihanAngular",
+  "cli": {
+    "analytics": "1c5b4838-7d77-40f0-93f9-acad86148809"
+  }
 }

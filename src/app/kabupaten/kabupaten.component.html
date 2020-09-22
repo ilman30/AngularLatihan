@@ -1,0 +1,32 @@
+<div class="row">
+    <div class="col-md-12">
+        <section class="my-5">
+            <form [formGroup]="addKabupatenForm" (ngSubmit)="simpanKab()">
+                <div class="form-group">
+                  <label for="kode">ID Kabupaten:</label>
+                  <input type="text" class="form-control" id="id" formControlName="idKabupaten" placeholder="ID">
+                  <span *ngIf="!addKabupatenForm.get('idKabupaten').valid && addKabupatenForm.get('idKabupaten').touched" class="help-block">
+                    ID Wajib Diisi!
+                  </span>
+                </div>
+                <div class="form-group">
+                  <label for="nama">Nama Kabupaten:</label>
+                  <input type="text" class="form-control" id="nama" formControlName="namaKabupaten" placeholder="Nama Kabupaten">
+                  <span *ngIf="!addKabupatenForm.get('namaKabupaten').valid && addKabupatenForm.get('namaKabupaten').touched" class="help-block">
+                    Nama Wajib Diisi!
+                  </span>
+                </div>
+                <div class="form-group">
+                    <label for="nama">Nama Provinsi:</label>
+                    <select class="form-control" id="dataprovinsi" formControlName="kodeProvinsi">
+                        <option *ngFor="let p of listProv" value="{{ p.idProvinsi }}">{{ p.namaProvinsi }}</option>
+                    </select>
+                    <span *ngIf="!addKabupatenForm.get('kodeProvinsi').valid && addKabupatenForm.get('kodeProvinsi').touched" class="help-block">
+                      Nama Wajib Diisi!
+                    </span>
+                  </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </section>
+    </div>
+</div>

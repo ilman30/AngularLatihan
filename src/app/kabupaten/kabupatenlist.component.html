@@ -1,0 +1,23 @@
+<h3>Daftar Kabupaten</h3>
+<div class="row">
+    <div class="col-md-12">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nama Kabupaten</th>
+                    <th>Provinsi Provinsi</th>
+                    <th>#</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let k of listKab"> 
+                    <td>{{k.idKabupaten}}</td>
+                    <td>{{k.namaKabupaten}}</td>
+                    <td>{{k.provinsi.namaProvinsi}}</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
