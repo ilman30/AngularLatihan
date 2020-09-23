@@ -11,6 +11,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProvinsiListComponent } from './provinsi/provinsilist.component';
 import { KabupatenComponent } from './kabupaten/kabupaten.component';
 import { KabupatenListComponent } from './kabupaten/kabupatenlist.component';
+import { KecamatanComponent } from './kecamatan/kecamatan.component';
+import { KecamatanListComponent } from './kecamatan/kecamatanlist.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { KabupatenListComponent } from './kabupaten/kabupatenlist.component';
     ProvinsiComponent,
     ProvinsiListComponent,
     KabupatenComponent,
-    KabupatenListComponent
+    KabupatenListComponent,
+    KecamatanComponent,
+    KecamatanListComponent
   ],
   imports: [
     BrowserModule,

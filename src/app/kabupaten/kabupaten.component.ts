@@ -7,7 +7,7 @@ import { Kabupaten } from './kabupaten';
 import { KabupatenService } from './kabupaten.service';
 
 @Component({
-    selector: 'app-kabupaten',
+    selector: 'app-home',
     templateUrl: './kabupaten.component.html',
     providers: [KabupatenService, ProvinsiService]
   })

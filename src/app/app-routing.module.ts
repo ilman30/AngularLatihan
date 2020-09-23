@@ -4,6 +4,8 @@ import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
 import { KabupatenComponent } from './kabupaten/kabupaten.component';
 import { KabupatenListComponent } from './kabupaten/kabupatenlist.component';
+import { KecamatanComponent } from './kecamatan/kecamatan.component';
+import { KecamatanListComponent } from './kecamatan/kecamatanlist.component';
 import { ProvinsiComponent } from './provinsi/provinsi.component';
 import { ProvinsiListComponent } from './provinsi/provinsilist.component';
 
@@ -16,7 +18,10 @@ const routes: Routes = [
   {path:"editprov/:id",component:ProvinsiComponent, pathMatch: 'full'},
   {path:"addkab",component:KabupatenComponent},
   {path:"listkab",component:KabupatenListComponent},
-  {path:"editkab/:id",component:KabupatenComponent, pathMatch: 'full'}
+  {path:"editkab/:id",component:KabupatenComponent, pathMatch: 'full'},
+  {path:"addkec",component:KecamatanComponent},
+  {path:"listkec",component:KecamatanListComponent},
+  {path:"editkec/:id",component:KecamatanComponent, pathMatch: 'full'}
 
 ];
 

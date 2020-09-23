@@ -1,0 +1,23 @@
+<h3>Daftar Kecamatan</h3>
+<div class="row">
+    <div class="col-md-12">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nama Kecamatan</th>
+                    <th>Nama Kabupaten</th>
+                    <th>#</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let kec of listKec"> 
+                    <td>{{kec.idKecamatan}}</td>
+                    <td>{{kec.namaKecamatan}}</td>
+                    <td>{{kec.kabupaten.namaKabupaten}}</td>
+                    <td><a href="/editkec/{{kec.idKecamatan}}">Edit</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

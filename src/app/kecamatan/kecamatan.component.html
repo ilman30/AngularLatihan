@@ -1,0 +1,41 @@
+<div class="row">
+    <div class="col-md-12">
+        <section class="my-5">
+            <form [formGroup]="addKecamatanForm" (ngSubmit)="simpanKec()">
+                <div class="form-group">
+                    <label for="nama">Nama Provinsi:</label>
+                    <select class="form-control" id="dataprovinsi" formControlName="kodeProvinsi" (change)="ambilKabupaten()">
+                        <option *ngFor="let p of listProv" value="{{ p.idProvinsi }}">{{ p.namaProvinsi }}</option>
+                    </select>
+                    <span *ngIf="!addKecamatanForm.get('kodeProvinsi').valid && addKecamatanForm.get('kodeProvinsi').touched" class="help-block">
+                      Nama Wajib Diisi!
+                    </span>
+                </div>
+                <div class="form-group">
+                    <label for="nama">Nama Kabupaten:</label>
+                    <select class="form-control" formControlName="kodeKabupaten">
+                        <option *ngFor="let k of listKab" value="{{ k.idKabupaten }}">{{ k.namaKabupaten }}</option>
+                    </select>
+                    <span *ngIf="!addKecamatanForm.get('kodeKabupaten').valid && addKecamatanForm.get('kodeKabupaten').touched" class="help-block">
+                      Nama Wajib Diisi!
+                    </span>
+                </div>
+                <div class="form-group">
+                  <label for="kode">ID Kecamatan:</label>
+                  <input type="text" class="form-control" id="id" formControlName="idKecamatan" placeholder="ID">
+                  <span *ngIf="!addKecamatanForm.get('idKecamatan').valid && addKecamatanForm.get('idKecamatan').touched" class="help-block">
+                    ID Wajib Diisi!
+                  </span>
+                </div>
+                <div class="form-group">
+                  <label for="nama">Nama Kecamatan:</label>
+                  <input type="text" class="form-control" id="nama" formControlName="namaKecamatan" placeholder="Nama Kecamatan">
+                  <span *ngIf="!addKecamatanForm.get('namaKecamatan').valid && addKecamatanForm.get('namaKecamatan').touched" class="help-block">
+                    Nama Wajib Diisi!
+                  </span>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </section>
+    </div>
+</div>
